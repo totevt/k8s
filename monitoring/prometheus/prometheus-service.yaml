@@ -9,10 +9,12 @@ metadata:
   labels:
     name: prometheus
 spec:
+  type: NodePort
   selector: 
     app: prometheus-server 
   ports: 
     - name: prometheus 
+      nodePort: 30180
       port: 8080
       targetPort: prometheus
 #  type: LoadBalancer
