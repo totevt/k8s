@@ -72,4 +72,5 @@ The Prometheus Pushgateway exists to allow ephemeral and batch jobs to expose th
 2. Some basic alerting rules are defined in the prometheus rules file which can be updated before deploying. You can also add more rules under the same groups or create new ones.
 3. Please update alertmanager config map with appropriate alert delivery endpoints. 
 4. Instead of GCS as long term storage you can also use S3. Refer prometheus docs for the config change. 
-
+5. Prometheus offers hot reloads. So if you need to update the config or rules file, just update the config map and make a HTTP POST request to the Prometheus endpoint. Eg: curl -XPOST http://<Prometheus-Svc-Ext-Ip>:8080>/-/reload
+6. Alertmanager config can be reloaded by a similar api call: curl -XPOST http://<Alertmanager-Svc-Ext-Ip>:9093>/-/reload
