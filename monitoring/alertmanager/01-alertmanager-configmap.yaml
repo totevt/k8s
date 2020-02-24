@@ -7,7 +7,7 @@ data:
   config.yml: |-
     global:
       resolve_timeout: 5m
-      slack_api_url: "https://hooks.slack.com/services/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"
+      #   slack_api_url: "https://hooks.slack.com/services/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"
 
     templates:
     - '/etc/alertmanager-templates/*.tmpl'
@@ -26,8 +26,8 @@ data:
     receivers:
     - name: 'slack'
       slack_configs:
-      - api_url: https://hooks.slack.com/services/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
-        channel: '#preprod-monitoring'
+      - api_url: https://hooks.slack.com/services/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
+        channel: '#staging-monitoring'
         send_resolved: true
         color: '{{ if eq .Status "firing" }}danger{{ else }}good{{ end }}'
         title: '{{ template "slack.default.title" . }}'
