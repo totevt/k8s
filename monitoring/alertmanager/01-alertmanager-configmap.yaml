@@ -26,7 +26,7 @@ data:
     receivers:
     - name: 'slack'
       slack_configs:
-      - api_url: https://hooks.slack.com/services/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
+      - api_url: https://hooks.slack.com/services/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
         channel: '#staging-monitoring'
         send_resolved: true
         color: '{{ if eq .Status "firing" }}danger{{ else }}good{{ end }}'
